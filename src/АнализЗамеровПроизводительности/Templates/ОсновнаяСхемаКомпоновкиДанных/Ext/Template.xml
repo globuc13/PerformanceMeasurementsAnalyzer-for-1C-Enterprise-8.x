@@ -473,6 +473,7 @@
 						<v8:valueType/>
 						<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
 					</dcsset:right>
+					<dcsset:viewMode>QuickAccess</dcsset:viewMode>
 					<dcsset:userSettingID>64c09ccd-545c-4770-b618-2e5feaf7a192</dcsset:userSettingID>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
@@ -506,12 +507,14 @@
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ТолькоПользователиСЗамерами</dcscor:parameter>
 					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
 					<dcsset:userSettingID>81404ae7-e190-5c45-9fdd-9aaa5101480c</dcsset:userSettingID>
 					<dcsset:userSettingPresentation xsi:type="xs:string">Только пользователи с замерами за период</dcsset:userSettingPresentation>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ПоказыватьНеактивныхПользователей</dcscor:parameter>
 					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
 					<dcsset:userSettingID>3c186512-7496-5926-abc7-15b38022a08c</dcsset:userSettingID>
 					<dcsset:userSettingPresentation xsi:type="xs:string">Показывать неактивных и служебных пользователей</dcsset:userSettingPresentation>
 				</dcscor:item>
@@ -879,6 +882,7 @@
 						<v8:valueType/>
 						<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
 					</dcsset:right>
+					<dcsset:viewMode>QuickAccess</dcsset:viewMode>
 					<dcsset:userSettingID>98e65464-93a5-4b56-baf3-41454d71966d</dcsset:userSettingID>
 				</dcsset:item>
 			</dcsset:filter>
@@ -893,12 +897,14 @@
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ТолькоПользователиСЗамерами</dcscor:parameter>
 					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
 					<dcsset:userSettingID>50ee5eb5-d27b-54b6-b349-74364703667f</dcsset:userSettingID>
 					<dcsset:userSettingPresentation xsi:type="xs:string">Только пользователи с замерами за период</dcsset:userSettingPresentation>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ПоказыватьНеактивныхПользователей</dcscor:parameter>
 					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
 					<dcsset:userSettingID>f5a14c77-e1d2-5ba6-8949-315dc6fd6456</dcsset:userSettingID>
 					<dcsset:userSettingPresentation xsi:type="xs:string">Показывать неактивных и служебных пользователей</dcsset:userSettingPresentation>
 				</dcscor:item>
@@ -1015,6 +1021,7 @@
 						<v8:valueType/>
 						<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
 					</dcsset:right>
+					<dcsset:viewMode>QuickAccess</dcsset:viewMode>
 					<dcsset:userSettingID>79d4c33e-c398-41b7-80c2-9944c78ada8c</dcsset:userSettingID>
 				</dcsset:item>
 			</dcsset:filter>
@@ -1029,12 +1036,14 @@
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ТолькоПользователиСЗамерами</dcscor:parameter>
 					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
 					<dcsset:userSettingID>431040ce-fd29-5269-8345-95aaf59809e0</dcsset:userSettingID>
 					<dcsset:userSettingPresentation xsi:type="xs:string">Только пользователи с замерами за период</dcsset:userSettingPresentation>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ПоказыватьНеактивныхПользователей</dcscor:parameter>
 					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
 					<dcsset:userSettingID>779254ab-2ce7-560d-acf4-2b28230ee152</dcsset:userSettingID>
 					<dcsset:userSettingPresentation xsi:type="xs:string">Показывать неактивных и служебных пользователей</dcsset:userSettingPresentation>
 				</dcscor:item>
@@ -1151,6 +1160,7 @@
 						<v8:valueType/>
 						<v8:lastId xsi:type="xs:decimal">-1</v8:lastId>
 					</dcsset:right>
+					<dcsset:viewMode>QuickAccess</dcsset:viewMode>
 					<dcsset:userSettingID>0ff5854f-b55c-4387-b85e-847cc4fd42d8</dcsset:userSettingID>
 				</dcsset:item>
 			</dcsset:filter>
@@ -1165,12 +1175,14 @@
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ТолькоПользователиСЗамерами</dcscor:parameter>
 					<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
 					<dcsset:userSettingID>07f02d8d-8b63-5d7c-9818-aaf70df03589</dcsset:userSettingID>
 					<dcsset:userSettingPresentation xsi:type="xs:string">Только пользователи с замерами за период</dcsset:userSettingPresentation>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ПоказыватьНеактивныхПользователей</dcscor:parameter>
 					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					<dcsset:viewMode>Normal</dcsset:viewMode>
 					<dcsset:userSettingID>0f3ad895-27b4-586e-b46b-fce066dccf3f</dcsset:userSettingID>
 					<dcsset:userSettingPresentation xsi:type="xs:string">Показывать неактивных и служебных пользователей</dcsset:userSettingPresentation>
 				</dcscor:item>
