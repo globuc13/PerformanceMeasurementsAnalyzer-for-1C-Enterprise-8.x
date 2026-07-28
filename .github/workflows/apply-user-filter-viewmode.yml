@@ -1,0 +1,38 @@
+name: Apply user filter view modes
+
+on:
+  push:
+    branches:
+      - feature/user-presentation-filter
+
+permissions:
+  contents: write
+
+jobs:
+  apply-fix:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/user-presentation-filter
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Apply checked XML transformation
+        run: python .github/scripts/fix_user_filter_viewmode.py
+
+      - name: Commit source fix
+        run: |
+          if git diff --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/АнализЗамеровПроизводительности/Templates/ОсновнаяСхемаКомпоновкиДанных/Ext/Template.xml
+          git commit -m "Исправить описание доступных значений отбора пользователей"
+          git push origin HEAD:feature/user-presentation-filter
