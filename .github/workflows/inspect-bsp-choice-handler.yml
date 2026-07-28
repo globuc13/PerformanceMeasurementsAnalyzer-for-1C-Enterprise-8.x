@@ -1,0 +1,43 @@
+name: Inspect BSP choice handler
+
+on:
+  push:
+    branches:
+      - feature/user-presentation-filter
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/user-presentation-filter
+          fetch-depth: 0
+      - name: Extract BSP function
+        shell: bash
+        run: |
+          set -euo pipefail
+          url='https://raw.githubusercontent.com/1c-syntax/ssl_3_1/475721bc8aa00d6c11602c8161aed3219bf3f820/src/cf/CommonModules/%D0%9E%D1%82%D1%87%D0%B5%D1%82%D1%8B%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80/Ext/Module.bsl'
+          curl -fsSL "$url" -o /tmp/Module.bsl
+          python - <<'PY'
+          from pathlib import Path
+          text = Path('/tmp/Module.bsl').read_text(encoding='utf-8-sig')
+          marker = 'Функция СвойстваЭлементаПользовательскихНастроек'
+          start = text.find(marker)
+          if start < 0:
+              raise SystemExit('function not found')
+          end = text.find('КонецФункции', start)
+          if end < 0:
+              raise SystemExit('end not found')
+          end += len('КонецФункции')
+          Path('tmp_bsp_choice_properties.txt').write_text(text[start:end] + '\n', encoding='utf-8')
+          PY
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add tmp_bsp_choice_properties.txt
+          git commit -m 'Добавить временный фрагмент контракта БСП'
+          git push
