@@ -1,0 +1,44 @@
+name: Fix effective report settings
+
+on:
+  push:
+    branches:
+      - feature/user-presentation-filter
+    paths:
+      - .tmp/run-effective-settings-fix
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/user-presentation-filter
+          fetch-depth: 0
+      - name: Patch object module
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('src/АнализЗамеровПроизводительности/Ext/ObjectModule.bsl')
+          text = path.read_text(encoding='utf-8-sig')
+          old = '\tПараметрыДанных = Форма.Отчет.КомпоновщикНастроек.Настройки.ПараметрыДанных;\n'
+          new = (
+              '\tИтоговыеНастройки = Форма.Отчет.КомпоновщикНастроек.ПолучитьНастройки();\n'
+              '\tПараметрыДанных = ИтоговыеНастройки.ПараметрыДанных;\n'
+          )
+          count = text.count(old)
+          if count != 2:
+              raise SystemExit(f'unexpected replacement count: {count}')
+          path.write_text(text.replace(old, new), encoding='utf-8-sig')
+          PY
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add 'src/АнализЗамеровПроизводительности/Ext/ObjectModule.bsl'
+          git commit -m 'Читать применённые пользовательские параметры отчёта'
+          git push
